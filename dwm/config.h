@@ -17,14 +17,14 @@ static const int vertpadbar        = 15;             /* vertical padding for sta
 static const int showclientcount   = 1;              /* 1 means show client indicators on tag */
 
 /* Alternative Bars */
-static const int usealtbar         = 1;              /* 1 means use non-dwm status bar */
+static const int usealtbar         = 0;              /* 1 means use non-dwm status bar */
 static const char *altbarclass     = "Polybar";      /* Alternate bar class name */
 static const char *alttrayname     = "tray";         /* Polybar tray instance name */
 static const char *altbarcmd       = "polybar-open"; /* Alternate bar launch command */
 
 /* Fonts */
 static const char *fonts[]         = {
-    "Anonymice Nerd Font:size=16:antialias=true:autohint=true",
+    "Hack Nerd Font:size=14:antialias=true:autohint=true",
     "Hack:size=10:antialias=true:autohint=true",
     "JoyPixels:size=12:antialias=true:autohint=true" };
 
@@ -103,22 +103,9 @@ static const Rule rules[] = {
    * Right = 1
    */
   /* class                        instance                       title              tags mask    swithtotag   isfloating   monitor */
-  { "Thunderbird",                "Mail",                       NULL,              2,           0,            0,           2   },
   { "firefox",                    "Navigator",                  NULL,              1,           0,            0,           2   },
-  
-  { "Code",                       "code",                       NULL,              0,           0,            0,           0   },
-
-  
   { "zoom",                       "zoom",                       NULL,              0,           0,            1,           1   },
   { "Slack",                      "slack",                      NULL,              0,           0,            0,           1   },
-  { "discord",                    "discord",                    NULL,              0,           0,            0,           1   },
-  { "realvnc-vncviewer",          NULL,                         NULL,              0,           0,            1,           2   },  
-  { "whatsapp-nativefier-930aa1", "whatsapp-nativefier-930aa1", NULL,              0,           0,            0,           1   },  
-  { NULL,                         NULL,                         "Spotify Premium", 0,           0,            0,           1   },
-  
-  { "Pcmanfm",                    "pcmanfm",                    NULL,              0,           0,            0,           -1  },
-  { "Pcmanfm",                    "pcmanfm",                    "Execute File",    0,           0,            1,           -1  },
-
 };
 
 /* layout(s) */
@@ -162,7 +149,7 @@ static Key keys[] = {
   { MODKEY,               XK_space,    spawn, CMD("m-drun") },
   { MODKEY,               XK_x,        spawn, CMD("m-run") },
   { MODKEY|ShiftMask,     XK_Return,   spawn, {.v = dmenucmd } },
-  { MODKEY,               XK_Return,   spawn, CMD("alacritty") },
+  { MODKEY,               XK_Return,   spawn, CMD("st") },
   { Mod1Mask,             XK_Return,   spawn, CMD("tabbed-term") },
   { ControlMask,          XK_Print,    spawn, CMD("sleep 0.25s; shot") },
   { ShiftMask,            XK_Print,    spawn, CMD("sleep 0.25s; shot focused") },
@@ -176,7 +163,6 @@ static Key keys[] = {
   { Mod1Mask|ControlMask, XK_t,        spawn, CMD("m-todo") },
   { Mod1Mask|ControlMask, XK_n,        spawn, CMD("m-notifications") },
   { Mod1Mask|ControlMask, XK_f,        spawn, CMD("m-fm") },
-  { Mod1Mask|ControlMask, XK_h,        spawn, CMD("alacritty -e bpytop") },
   { 0, XF86XK_AudioRaiseVolume,        spawn, CMD("pavolume volup --quiet") },
   { 0, XF86XK_Launch8,                 spawn, CMD("pavolume volup --quiet") },
   { 0, XF86XK_AudioLowerVolume,        spawn, CMD("pavolume voldown --quiet") },

@@ -2,7 +2,6 @@
 // Modify this file to change what commands output to your statusbar, and recompile using the make command.
 static const Block blocks[] = {
   /*Icon   Command             Update Interval   Update Signal*/
-  {" 阮 ",  "spotify-status",  10,               1},
   {"  ",  "pacupdate",       360,              9},
   {"  ",  "memory",          6,                1},
   {" ﴖ ",  "diskf",           90,               1},
