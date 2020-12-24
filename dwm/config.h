@@ -109,7 +109,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.66;  /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.55;  /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;     /* number of clients in master area */
 static const int resizehints = 0;     /* 1 means respect size hints in tiled resizals */
 
@@ -122,10 +122,10 @@ static const Layout layouts[] = {
   { "  ",      col },     /* first entry is default */
   { "ﳶ  ",      bstack },     
   { "  ",      monocle },
-  { "  ",      dwindle },
+//  { "  ",      dwindle },
   { "  ",      NULL },    /* no layout function means floating behavior */
 //{ "舘  ",      tile },    
-//{ "  ",      grid },
+  { "  ",      grid },
 //{ "  ",      spiral },
 //{ "充  ",      bstackhoriz },
   { NULL,       NULL },
@@ -146,11 +146,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[]     = { "dmenu_run", "-g", "3", "-l", "20", "-fn", "Source Code Pro:pixelsize=20", "-p", "Run: ", NULL };
 
 static Key keys[] = {
-  { MODKEY,               XK_space,    spawn, CMD("m-drun") },
-  { MODKEY,               XK_x,        spawn, CMD("m-run") },
   { MODKEY|ShiftMask,     XK_Return,   spawn, {.v = dmenucmd } },
   { MODKEY,               XK_Return,   spawn, CMD("st") },
-  { Mod1Mask,             XK_Return,   spawn, CMD("tabbed-term") },
   { ControlMask,          XK_Print,    spawn, CMD("sleep 0.25s; shot") },
   { ShiftMask,            XK_Print,    spawn, CMD("sleep 0.25s; shot focused") },
   { 0,                    XK_Print,    spawn, CMD("sleep 0.25s; shot select") },
