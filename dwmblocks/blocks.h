@@ -5,8 +5,9 @@ static const Block blocks[] = {
   {"  ",  "pacupdate",       360,              9},
   {"  ",  "memory",          6,                1},
   {" ﴖ ",  "diskf",           90,               1},
-  {"   ",  "volume",          2,                0},
+  {" ",  "volume",          2,                0},
   {" 羽 ",  "upt",             60,               2},
+  {"  ",  "block_battery",  60, 		0},
   {"  ",  "clock",           5,                0},
 };
 
